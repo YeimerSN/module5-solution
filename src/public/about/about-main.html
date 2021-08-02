@@ -1,0 +1,35 @@
+<div class="container">
+  <div ng-if="aboutCtrl.signIn">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Favorite Dish</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{ aboutCtrl.name }}</td>
+            <td>{{ aboutCtrl.lastName }}</td>
+            <td>{{ aboutCtrl.email }}</td>
+            <td>{{ aboutCtrl.phone }}</td>
+            <td ng-if="aboutCtrl.itemFound">Short Name: {{ aboutCtrl.favoriteDish }} <br>
+              Name: {{ aboutCtrl.nameItem }} <br>
+              Description: {{ aboutCtrl.description }}
+            </td>
+            <td ng-if="!aboutCtrl.itemFound">
+              No such menu number exists
+            </td>
+          </tr>
+        </tbody>
+  </table>
+  </div>
+  <div ng-if="!aboutCtrl.signIn">
+    <h2><button type="button" class="btn btn-primary" ui-sref="signin">Not Signed Up Yet. Sign up Now!</button></h2>
+  </div>
+</div> 
